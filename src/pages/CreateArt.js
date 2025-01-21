@@ -12,7 +12,7 @@ const bites = ["8x", "16x", "32x", "64x"];
 function CreateArt() {
   const [selectedBite, setSelectedBite] = useState("8x");
   return (
-    <div className="flex flex-col items-center bg-[#FCFBF2]">
+    <div className="flex flex-col items-center bg-[#FCFBF2] h-screen">
       <div className="py-6">
         <div className="flex items-center justify-center gap-[2px]">
           <SuiLogo />

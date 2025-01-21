@@ -8,7 +8,7 @@ function Chat() {
   const [isOn, setIsOn] = useState(false);
 
   return (
-    <div className={`${isOn ? 'bg-backgroundColor' : 'bg-white'} h-full p-5 flex flex-col justify-between relative transition-all`}>
+    <div className={`${isOn ? 'bg-backgroundColor' : 'bg-white'} p-5 flex flex-col justify-between relative transition-all h-screen`}>
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-2">
           <Logo />
