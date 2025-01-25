@@ -6,6 +6,7 @@ import "@fontsource/courier-prime";
 import "@fontsource/inter";
 import Images from '../assets/images';
 import ColorButtons from "../assets/images/Group 26.png";
+import { Link } from 'react-router-dom';
 
 const bites = ["8x", "16x", "32x", "64x"];
 
@@ -13,10 +14,16 @@ function CreateArt() {
   const [selectedBite, setSelectedBite] = useState("8x");
   return (
     <div className="flex flex-col items-center bg-[#FCFBF2] h-screen">
+      <Link to="/chat" style={{ display: 'none' }}>Hidden Chat Link</Link>
       <div className="py-6">
         <div className="flex items-center justify-center gap-[2px]">
           <SuiLogo />
-          <p className="font-inter font-bold text-xl text-black">Sushi.fm/rnft</p>
+          <p className="font-inter font-bold text-xl text-black">
+            Sushi.fm/rnft
+            <Link to="/chat" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <span style={{ cursor: 'pointer' }}>.</span>
+            </Link>
+          </p>
         </div>
       </div>
       <div className="py-6">

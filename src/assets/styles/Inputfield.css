@@ -1,0 +1,14 @@
+.input-field {
+  border: 1px solid #ccc; /* Adjust border color */
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #f9f9f9; /* Adjust background color */
+  color: #333; /* Adjust text color */
+  outline: none; /* Remove default outline */
+  transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: #007bff; /* Adjust focus border color */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Optional: add a subtle shadow */
+} 

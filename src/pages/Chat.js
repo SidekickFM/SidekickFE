@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Logo } from '../assets/icons';
-import Inputfield from '../components/Inputfield';
 import Switch from '../components/Switch';
 import "../App.css";
+import axios from 'axios';
 
 function Chat() {
   const [isOn, setIsOn] = useState(false);
@@ -17,17 +17,30 @@ function Chat() {
     return words.slice(0, wordCount).join(' ');
   };
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (inputValue.trim()) {
       const newMessages = [...messages, { text: inputValue, sender: 'user' }];
       setMessages(newMessages);
       setInputValue('');
 
-      // Simulate bot reply
-      setTimeout(() => {
-        const botReply = generateBotReply();
-        setMessages(prevMessages => [...prevMessages, { text: botReply, sender: 'bot' }]);
-      }, 1000);
+      try {
+        const response = await axios.post('http://localhost:3001/api/message', {
+          message: inputValue
+        });
+
+        if (response.data && response.data.response) {
+          setMessages(prevMessages => [...prevMessages, { text: response.data.response, sender: 'bot' }]);
+        }
+      } catch (error) {
+        console.error("Error sending message:", error);
+        // Optionally, handle the error by displaying a message to the user
+      }
+    }
+  };
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      handleSendMessage();
     }
   };
 
@@ -55,14 +68,28 @@ function Chat() {
       <div className="flex flex-col flex-grow overflow-y-auto">
         {messages.map((message, index) => (
           <div key={index} className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
-            <div className={`p-2 m-2 rounded-lg ${message.sender === 'user' ? 'bg-blue-500 text-white' : 'bg-gray-300 text-black'}`}>
-              {message.text}
-            </div>
+            {message.sender === 'bot' ? (
+              <div
+                className="p-2 m-2 rounded-lg bg-gray-300 text-black"
+                dangerouslySetInnerHTML={{ __html: message.text }}
+              />
+            ) : (
+              <div className="p-2 m-2 rounded-lg bg-blue-500 text-white">
+                {message.text}
+              </div>
+            )}
           </div>
         ))}
       </div>
       <div className="flex justify-center">
-        <Inputfield value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+        <input
+          type="text"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          onKeyPress={handleKeyPress}
+          className="border p-2 rounded"
+          placeholder="Type a message..."
+        />
         <button onClick={handleSendMessage} className="ml-2 p-2 bg-blue-500 text-white rounded">Send</button>
       </div>
       <div className="absolute bottom-6 right-4">
