@@ -10,9 +10,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/chat" element={<Chat />} />
-        <Route path="/create-art" element={<CreateArt />} />
+        {/* <Route path="/" element={<LandingPage />} /> */}
+        {/* <Route path="/chat" element={<Chat />} /> */}
+        <Route path="/" element={<CreateArt />} />
       </Routes>
     </BrowserRouter>
   )
