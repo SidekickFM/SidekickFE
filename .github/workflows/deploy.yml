@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
     - name: Checkout code
@@ -25,7 +25,7 @@ jobs:
       run: npm run build  # Ensure your build script is correct
 
     - name: Deploy to GitHub Pages
-      uses: SidekickFM/SidekickFE/actions-gh-pages@v3
+      uses: SidekickFM/SidekickFE/actions-gh-pages@v2
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./build  # Change this to your build output directory 
