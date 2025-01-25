@@ -6,7 +6,31 @@ import "../App.css";
 
 function Chat() {
   const [isOn, setIsOn] = useState(false);
- 
+  const [messages, setMessages] = useState([]);
+  const [inputValue, setInputValue] = useState('');
+
+  // Function to generate a random lorem ipsum reply
+  const generateBotReply = () => {
+    const loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+    const words = loremIpsum.split(' ');
+    const wordCount = Math.floor(Math.random() * (50 - 10 + 1)) + 10;
+    return words.slice(0, wordCount).join(' ');
+  };
+
+  const handleSendMessage = () => {
+    if (inputValue.trim()) {
+      const newMessages = [...messages, { text: inputValue, sender: 'user' }];
+      setMessages(newMessages);
+      setInputValue('');
+
+      // Simulate bot reply
+      setTimeout(() => {
+        const botReply = generateBotReply();
+        setMessages(prevMessages => [...prevMessages, { text: botReply, sender: 'bot' }]);
+      }, 1000);
+    }
+  };
+
   return (
     <div className={`${isOn ? 'bg-backgroundColor' : 'bg-white'} p-5 flex flex-col justify-between relative transition-all h-screen`}>
       <div className="flex justify-between items-center">
@@ -28,8 +52,18 @@ function Chat() {
           </div>
         </div>
       </div>
+      <div className="flex flex-col flex-grow overflow-y-auto">
+        {messages.map((message, index) => (
+          <div key={index} className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
+            <div className={`p-2 m-2 rounded-lg ${message.sender === 'user' ? 'bg-blue-500 text-white' : 'bg-gray-300 text-black'}`}>
+              {message.text}
+            </div>
+          </div>
+        ))}
+      </div>
       <div className="flex justify-center">
-        <Inputfield />
+        <Inputfield value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+        <button onClick={handleSendMessage} className="ml-2 p-2 bg-blue-500 text-white rounded">Send</button>
       </div>
       <div className="absolute bottom-6 right-4">
         <Switch isOn={isOn} setIsOn={setIsOn} />

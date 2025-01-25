@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* <Route path="/" element={<LandingPage />} /> */}
-        {/* <Route path="/chat" element={<Chat />} /> */}
+        <Route path="/chat" element={<Chat />} />
         <Route path="/" element={<CreateArt />} />
       </Routes>
     </BrowserRouter>
