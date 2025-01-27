@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.49c14ccc.css",
-    "main.js": "/static/js/main.3d0a2e38.js",
+    "main.css": "/static/css/main.f4150939.css",
+    "main.js": "/static/js/main.d65fd15c.js",
     "static/js/488.bf6e6a7a.chunk.js": "/static/js/488.bf6e6a7a.chunk.js",
     "static/media/axes_1.png": "/static/media/axes_1.db18d2f33f34b2ef5b53.png",
+    "static/media/0x64.png": "/static/media/0x64.2c0648808e75ccba4d8f.png",
     "static/media/inter-latin-ext-400-normal.woff": "/static/media/inter-latin-ext-400-normal.1c20f7dc20d731a18fcd.woff",
     "static/media/inter-latin-400-normal.woff": "/static/media/inter-latin-400-normal.b0c8fe9db56dd415a25a.woff",
     "static/media/inter-latin-ext-400-normal.woff2": "/static/media/inter-latin-ext-400-normal.3d10c85fbd16969509a2.woff2",
@@ -16,6 +17,7 @@
     "static/media/cormorant-infant-latin-ext-400-normal.woff2": "/static/media/cormorant-infant-latin-ext-400-normal.798aaed7e9bc0cb8a62f.woff2",
     "static/media/courier-prime-latin-400-normal.woff": "/static/media/courier-prime-latin-400-normal.1d155ce17f82c7375483.woff",
     "static/media/inter-cyrillic-ext-400-normal.woff": "/static/media/inter-cyrillic-ext-400-normal.e89451624c6caf35687f.woff",
+    "static/media/0x32.png": "/static/media/0x32.c7bea0884396c72fc7f5.png",
     "static/media/cormorant-infant-cyrillic-ext-400-normal.woff2": "/static/media/cormorant-infant-cyrillic-ext-400-normal.e71915a6049a429e6495.woff2",
     "static/media/courier-prime-latin-ext-400-normal.woff2": "/static/media/courier-prime-latin-ext-400-normal.5f815ad51fabfda18bb0.woff2",
     "static/media/cormorant-infant-cyrillic-400-normal.woff": "/static/media/cormorant-infant-cyrillic-400-normal.8b6a904abb06fe2eb061.woff",
@@ -33,12 +35,12 @@
     "static/media/cormorant-infant-vietnamese-400-normal.woff2": "/static/media/cormorant-infant-vietnamese-400-normal.031b7966f012ee32c028.woff2",
     "static/media/inter-vietnamese-400-normal.woff2": "/static/media/inter-vietnamese-400-normal.44c9df135eec470b0ab6.woff2",
     "index.html": "/index.html",
-    "main.49c14ccc.css.map": "/static/css/main.49c14ccc.css.map",
-    "main.3d0a2e38.js.map": "/static/js/main.3d0a2e38.js.map",
+    "main.f4150939.css.map": "/static/css/main.f4150939.css.map",
+    "main.d65fd15c.js.map": "/static/js/main.d65fd15c.js.map",
     "488.bf6e6a7a.chunk.js.map": "/static/js/488.bf6e6a7a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.49c14ccc.css",
-    "static/js/main.3d0a2e38.js"
+    "static/css/main.f4150939.css",
+    "static/js/main.d65fd15c.js"
   ]
 }
